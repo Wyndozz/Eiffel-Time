@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche de Présence</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #qr-scanner, #qr-generator {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+        #scanned-list {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="qr-generator">
+        <h2>Générateur de Code QR</h2>
+        <input type="text" id="name" placeholder="Nom">
+        <button onclick="startGeneratingQRCode()">Démarrer Génération</button>
+        <button onclick="stopGeneratingQRCode()">Arrêter Génération</button>
+        <div id="qrcode"></div>
+        <button onclick="simulateScan()">Simuler Scan</button>
+        <div id="scanned-list">
+            <h3>Liste des Scans</h3>
+            <ul id="scan-results"></ul>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="QR.js"></script>
+</body>
+</html>
